@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Test Results" junit="false" parallel="tests" configfailurepolicy="skip" thread-count="5"
+       data-provider-thread-count="10">
+
+    <test name="test1" preserve-order="true">
+
+    </test>
+
+</suite>
