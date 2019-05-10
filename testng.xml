@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Test Results" junit="false" parallel="methods" configfailurepolicy="skip" thread-count="5"
+       data-provider-thread-count="10">
+
+    <test name="test1" preserve-order="true">
+        <classes>
+            <class name="testng.dataprovider.DataProviderExample1"/>
+            <class name="testng.dataprovider.DataProviderExample2"/>
+        </classes>
+    </test>
+
+    <!--<test name="test2" preserve-order="true">-->
+        <!--<classes>-->
+            <!--<class name="testng.dataprovider.DataProviderExample2"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+
+</suite>

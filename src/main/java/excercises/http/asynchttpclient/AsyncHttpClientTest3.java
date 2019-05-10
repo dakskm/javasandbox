@@ -4,6 +4,7 @@ import static org.asynchttpclient.Dsl.*;
 
 import org.asynchttpclient.*;
 
+import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
 public class AsyncHttpClientTest3 {
@@ -26,6 +27,13 @@ public class AsyncHttpClientTest3 {
                 });
 
         promise.join();
+
+        try {
+            System.out.println("executing close");
+            asyncHttpClient.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("program ends");
     }

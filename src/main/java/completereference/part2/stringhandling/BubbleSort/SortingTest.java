@@ -1,7 +1,5 @@
 package completereference.part2.stringhandling.BubbleSort;
 
-import com.sun.deploy.util.StringUtils;
-
 import java.lang.reflect.Array;
 import java.util.Arrays;
 

@@ -25,8 +25,8 @@ public class AnagramChecker {
     public String curatedString(byte[] strBytes) {
         byte temp = 0;
 
-        for (int i = 0; i < strBytes.length - 1; i++) {
-            for (int j = i + 1; j < strBytes.length - 1; j++) {
+        for (int i = 0; i < strBytes.length; i++) {
+            for (int j = i + 1; j < strBytes.length; j++) {
                 if (strBytes[i] > strBytes[j]) {
                     temp = strBytes[i];
                     strBytes[i] = strBytes[j];

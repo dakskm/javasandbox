@@ -2,9 +2,7 @@ package excercises.alphabetchecker;
 
 public class AlphabetChecker {
     public static void main(String args[]) {
-        System.out.println(args[0]);
-
-        String testString = new String(args[0]);
+        String testString = "Dakshinamu(**(@!$rthy";
 
         char chars[] = testString.toCharArray();
 
@@ -30,9 +28,9 @@ public class AlphabetChecker {
 
         System.out.println(sbAlpha.toString());
         System.out.println(sbSpecial.toString());
-
-        System.out.println("----------------");
-        for (int i = 32; i < 127; i++)
-            System.out.println(i + " " + (char) i);
+//
+//        System.out.println("----------------");
+//        for (int i = 32; i < 127; i++)
+//            System.out.println(i + " " + (char) i);
     }
 }

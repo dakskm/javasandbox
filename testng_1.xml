@@ -4,7 +4,21 @@
        data-provider-thread-count="10">
 
     <test name="test1" preserve-order="true">
+        <classes>
+            <class name="testng.annotations.TestNGTest"/>
+        </classes>
+    </test>
 
+    <test name="test2" preserve-order="true">
+        <classes>
+            <class name="testng.dataprovider.DataProviderExample1"/>
+        </classes>
+    </test>
+
+    <test name="test3" preserve-order="true">
+        <classes>
+            <class name="testng.factory.FactoryExample1"/>
+        </classes>
     </test>
 
 </suite>

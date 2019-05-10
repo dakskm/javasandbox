@@ -2,10 +2,15 @@ package excercises.anagram;
 
 public class AnagramTest {
     public static void main(String args[]) {
-        String sourceStr = "GeeksForGeeks";
-        String targetStr = "forgeeksgeeks";
+        String sourceStr = "GeeksForGeeksnst";
+        String targetStr = "forgeeksgeekssnt";
 
         anagramChecker(sourceStr, targetStr);
+
+        String sourceStr1 = "Silent";
+        String targetStr1 = "Listen";
+
+        anagramChecker(sourceStr1, targetStr1);
     }
 
     public static void anagramChecker(String sourceStr, String targetStr) {
@@ -32,8 +37,8 @@ public class AnagramTest {
     public static String curatedString(byte[] strBytes) {
         byte temp = 0;
 
-        for (int i = 0; i < strBytes.length - 1; i++) {
-            for (int j = i + 1; j < strBytes.length - 1; j++) {
+        for (int i = 0; i < strBytes.length; i++) {
+            for (int j = i + 1; j < strBytes.length; j++) {
                 if (strBytes[i] > strBytes[j]) {
                     temp = strBytes[i];
                     strBytes[i] = strBytes[j];

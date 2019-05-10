@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2014 Apple Inc. All rights reserved.
+  ~ No part of this application may be reproduced without Apple Inc.'s express consent.
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an 'AS IS' BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0.0">
+
+    <xs:element name="tag" type="tagType">
+        <xs:annotation>
+            <xs:documentation>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="../schemas/tags.xsd"
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:simpleType name="nonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tagType">
+        <xs:sequence>
+            <xs:element type="nonEmptyString" name="id" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="nonEmptyString" name="name" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="localesType" name="locales" minOccurs="1" maxOccurs="1" nillable="false"/>
+	    <xs:element type="metaDataType" name="metadata" minOccurs="0" maxOccurs="1" nillable="false"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="localesType">
+        <xs:sequence>
+            <xs:element type="localeType" name="locale" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="localeType">
+        <xs:sequence>
+            <xs:element type="nonEmptyString" name="id" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="nonEmptyString" name="name" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="pagesType" name="pages" minOccurs="1" maxOccurs="1" nillable="false"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pagesType">
+        <xs:sequence>
+            <xs:element type="pageType" name="page" minOccurs="1" maxOccurs="unbounded" nillable="false"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="pageType">
+        <xs:sequence>
+            <xs:element type="nonEmptyString" name="id" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="nonEmptyString" name="name" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="nonEmptyString" name="version" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="nonEmptyString" name="revision" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="nonEmptyString" name="locale_id" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element type="metaDataType" name="metadata" minOccurs="0" maxOccurs="1" nillable="false"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="metaDataType">
+        <xs:sequence>
+            <xs:element type="metaDataItemType" name="item" maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="metaDataItemType">
+        <xs:sequence maxOccurs="1" minOccurs="1">
+            <xs:element type="nonEmptyString" name="key" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="nonEmptyString" name="value" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
